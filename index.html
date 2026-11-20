@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rodrigo · Webs para negocios locales</title>
+<meta name="description" content="Portfolio de webs para bares, restaurantes y tiendas de barrio. Demo gratuita de tu negocio en 1–2 días.">
+<meta property="og:title" content="Rodrigo · Webs para negocios locales">
+<meta property="og:description" content="Webs rápidas y cuidadas para bares, restaurantes y tiendas. Mira las demos.">
+<meta property="og:image" content="img/boina-y-copa.jpg">
+<meta name="theme-color" content="#f4f1ea">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2318181b'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23f4f1ea' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f1ea; --paper:#fbfaf6; --ink:#18181b; --muted:#6b6862; --line:#dcd7cc;
+    --accent:#b4532a; --radius:14px;
+    --serif:"Instrument Serif",Georgia,serif; --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{width:min(1160px,100% - 48px);margin-inline:auto}
+
+  /* Cabecera */
+  header{padding:28px 0}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{font-family:var(--serif);font-size:26px;letter-spacing:.2px;text-decoration:none}
+  .brand span{color:var(--muted);font-style:italic}
+  .nav{display:flex;gap:28px;font-size:14px;font-weight:500}
+  .nav a{text-decoration:none;color:var(--muted);transition:color .2s}
+  .nav a:hover{color:var(--ink)}
+
+  /* Portada */
+  .avail{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:7px 14px;border:1px solid var(--line);border-radius:99px;background:var(--paper)}
+  .avail::before{content:"";width:8px;height:8px;border-radius:50%;background:#3f9b5a;box-shadow:0 0 0 4px rgba(63,155,90,.15)}
+  .hero{padding:40px 0 8px}
+  .hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:end}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .cta{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:99px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--ink);transition:background .2s,color .2s}
+  .cta.dark{background:var(--ink);color:var(--bg)}
+  .cta.dark:hover{background:#000}
+  .cta:not(.dark):hover{background:var(--ink);color:var(--bg)}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow::before{content:"";width:28px;height:1px;background:var(--accent)}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(42px,6vw,82px);line-height:.98;letter-spacing:-.02em;margin:20px 0 0;max-width:14ch}
+  h1 em{color:var(--accent)}
+  .lead{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:56ch}
+  .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:48px;border-top:1px solid var(--line)}
+  .fact{padding:22px 24px 0 0}
+  .fact + .fact{padding-left:24px;border-left:1px solid var(--line)}
+  .fact b{display:block;font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.1}
+  .fact span{font-size:14px;color:var(--muted)}
+
+  /* Trabajos */
+  .work{padding:56px 0 40px}
+  .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .section-head h2{font-size:15px;font-family:var(--sans);font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .section-head span{font-size:14px;color:var(--muted)}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.6vw,56px);line-height:1;letter-spacing:-.015em}
+  .section-head p{color:var(--muted);max-width:40ch;font-size:15px}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px}
+
+  .card{display:block;text-decoration:none;color:inherit;outline:none}
+  .frame{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+    box-shadow:0 1px 0 rgba(0,0,0,.03),0 18px 40px -24px rgba(40,30,20,.35);
+    transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+  .bar{display:flex;align-items:center;gap:6px;padding:11px 14px;border-bottom:1px solid var(--line);background:var(--paper)}
+  .bar i{width:9px;height:9px;border-radius:50%;background:#d9d3c7}
+  .bar .url{margin-left:10px;flex:1;font-size:12px;color:var(--muted);background:var(--bg);border-radius:6px;padding:3px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .shot{aspect-ratio:16/10;overflow:hidden;background:#e9e5dc}
+  .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .meta{display:flex;justify-content:space-between;align-items:start;gap:16px;padding:20px 4px 0}
+  .meta h3{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.1}
+  .meta p{color:var(--muted);font-size:14.5px;margin-top:4px}
+  .tags{padding:0;display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .tags li.role{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .tags li{list-style:none;font-size:12px;font-weight:600;padding:4px 10px;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+  .go{flex:none;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:1px solid var(--ink);
+    transition:background .25s,color .25s,transform .45s cubic-bezier(.2,.7,.2,1)}
+  .go svg{width:18px;height:18px}
+  .card:hover .frame,.card:focus-visible .frame{transform:translateY(-6px);box-shadow:0 1px 0 rgba(0,0,0,.03),0 30px 60px -28px rgba(40,30,20,.45)}
+  .card:hover .shot img{transform:scale(1.025)}
+  .card:hover .go,.card:focus-visible .go{background:var(--ink);color:var(--bg);transform:rotate(-45deg)}
+  .card:focus-visible .frame{outline:2px solid var(--accent);outline-offset:4px}
+  @media (prefers-reduced-motion:reduce){.frame,.shot img,.go{transition:none}.card:hover .frame{transform:none}.card:hover .shot img{transform:none}}
+
+
+  /* Carta QR */
+  .qrsec{padding:88px 0;border-top:1px solid var(--line);margin-top:72px}
+  .qr-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+  .qrsec h2 em{color:var(--accent)}
+  .qrsec .lead{margin-top:18px}
+  .ticks{list-style:none;padding:0;margin:28px 0 32px;display:grid;gap:14px}
+  .ticks li{display:grid;grid-template-columns:24px 1fr;gap:12px;font-size:15.5px}
+  .ticks li::before{content:"";width:22px;height:22px;border-radius:50%;background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f4f1ea' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/13px no-repeat;margin-top:1px}
+  .ticks b{font-weight:700}
+  .ticks span{color:var(--muted)}
+  .stage{position:relative;display:grid;place-items:center;padding:40px 0;
+}
+  .tent{width:min(330px,100%);background:#16120f;color:#efe6d6;border-radius:6px;padding:34px 32px 30px;text-align:center;
+    box-shadow:0 2px 0 #0b0907,0 40px 60px -30px rgba(30,20,10,.6),0 12px 24px -12px rgba(30,20,10,.4);transform:perspective(900px) rotateX(6deg)}
+  .tent .tent-name{font-family:Georgia,"Times New Roman",serif;letter-spacing:.18em;font-size:20px}
+  .tent .tent-sub{font-size:10px;letter-spacing:.42em;color:#b88a4b;margin-top:6px}
+  .tent .tent-rule{height:1px;background:#b88a4b;opacity:.6;margin:20px auto;width:60%}
+  .tent .tent-cta{font-family:Georgia,serif;font-style:italic;font-size:17px;margin-bottom:18px}
+  .qrbox{background:#f6efe2;color:#16120f;padding:14px;border-radius:4px;width:190px;margin:0 auto;display:block}
+  .qr{display:block;width:100%;height:auto}
+  .tent .tent-foot{font-size:11px;letter-spacing:.12em;color:#a99d8a;margin-top:16px;text-transform:uppercase}
+  .scan-hint{margin-top:22px;font-size:13px;color:var(--muted);text-align:center}
+  @media (max-width:860px){.qr-grid{grid-template-columns:1fr;gap:24px}.qrsec{margin-top:48px;padding:64px 0}}
+
+  /* Cómo trabajo */
+  .how{padding:88px 0;border-top:1px solid var(--line)}
+  .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:44px;counter-reset:s}
+  .step{padding-top:20px;border-top:1px solid var(--ink)}
+  .step::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:20px;color:var(--accent)}
+  .step h3{font-size:18px;font-weight:700;margin:10px 0 6px}
+  .step p{color:var(--muted);font-size:15px}
+
+  /* Contacto */
+  .contact{background:var(--ink);color:var(--bg);border-radius:22px;padding:clamp(40px,6vw,72px);margin-bottom:56px}
+  .contact h2{color:var(--bg)}
+  .contact h2 em{color:#e0a07e}
+  .contact p{color:#b9b4aa;margin-top:16px;max-width:44ch}
+  .btns{display:flex;flex-direction:column;gap:12px}
+  .btn{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-radius:12px;text-decoration:none;font-weight:600;font-size:15px;
+    border:1px solid #3a3a3f;transition:background .2s,border-color .2s}
+  .btn:hover{background:#26262a;border-color:#55555c}
+  .btn.primary{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+  .btn.primary:hover{background:#fff}
+
+  footer{padding:0 0 40px;color:var(--muted);font-size:13px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media (max-width:860px){
+    .grid{grid-template-columns:1fr;gap:48px}
+    .steps{grid-template-columns:1fr;gap:28px}
+    .contact{grid-template-columns:1fr}
+    .section-head{flex-direction:column;align-items:start}
+    .nav{display:none}
+    .hero-grid{grid-template-columns:1fr;gap:20px}
+  }
+  @media (max-width:560px){
+    .wrap{width:calc(100% - 36px)}
+    .hero{padding:44px 0 60px}
+    .facts{grid-template-columns:1fr}
+    .avail{font-size:12px;padding:6px 11px}
+    .avail-long{display:none}
+    .brand{font-size:23px;white-space:nowrap}
+    .work{padding-top:40px}
+    .fact,.fact + .fact{padding:18px 0;border-left:0;border-bottom:1px solid var(--line)}
+    .work{padding-top:64px}
+    .meta h3{font-size:26px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#">Rodrigo <span>· webs</span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#trabajos">Trabajos</a>
+      <a href="#carta-qr">Carta QR</a>
+      <a href="#como-trabajo">Cómo trabajo</a>
+    </nav>
+    <span class="avail">Disponible<span class="avail-long">&nbsp;para proyectos</span></span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Bares, restaurantes y tiendas · Fuenlabrada y alrededores</span>
+      <div class="hero-grid">
+        <h1>Webs que traen <em>clientes</em> a tu negocio.</h1>
+        <div>
+          <p class="lead">Diseño y programo webs rápidas y claras en el móvil, con lo que tus clientes buscan: carta, horario, teléfono y cómo llegar. Te enseño una demo de tu negocio antes de pagar nada.</p>
+          <div class="ctas">
+            <a class="cta dark" href="#trabajos">Ver trabajos <span aria-hidden="true">↓</span></a>
+            <a class="cta" href="#como-trabajo">Cómo trabajo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="trabajos">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Trabajos seleccionados</h2>
+        <span>Pulsa para ver cada web completa</span>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="boina-y-copa/">
+          <div class="frame">
+            <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">Demo · Boina y Copa</span></div>
+            <div class="shot">
+              <picture>
+                <source srcset="img/boina-y-copa.webp" type="image/webp">
+                <img src="img/boina-y-copa.jpg" alt="Portada de la web del bar restaurante Boina y Copa" width="1600" height="1000" fetchpriority="high">
+              </picture>
+            </div>
+          </div>
+          <div class="meta">
+            <div>
+              <h3>Boina y Copa</h3>
+              <p>Bar restaurante · Carta digital, horario y reservas</p>
+              <ul class="tags"><li class="role">Diseño + desarrollo</li><li>Carta digital</li><li>Reservas por WhatsApp</li><li>Abierto ahora</li></ul>
+            </div>
+            <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+
+        <a class="card" href="arvelo/">
+          <div class="frame">
+            <div class="bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">Demo · Electricidad Arvelo</span></div>
+            <div class="shot">
+              <picture>
+                <source srcset="img/arvelo.webp" type="image/webp">
+                <img src="img/arvelo.jpg" alt="Portada de la web de la tienda Electricidad Arvelo" width="1600" height="1000" fetchpriority="high">
+              </picture>
+            </div>
+          </div>
+          <div class="meta">
+            <div>
+              <h3>Electricidad Arvelo</h3>
+              <p>Tienda de material eléctrico · Productos, servicios y mapa</p>
+              <ul class="tags"><li class="role">Diseño + desarrollo</li><li>Escaparate de productos</li><li>Mapa</li><li>Llamada directa</li></ul>
+            </div>
+            <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="qrsec" id="carta-qr">
+    <div class="wrap qr-grid">
+      <div>
+        <span class="eyebrow">Para bares y restaurantes</span>
+        <h2 style="margin-top:18px">Carta digital <em>con QR</em></h2>
+        <p class="lead">Tus clientes escanean el código de la mesa y ven la carta en su móvil, bien organizada y fácil de leer. Va incluida en la web de tu restaurante.</p>
+        <ul class="ticks">
+          <li><div><b>Cambia precios y platos al momento.</b> <span>Sin volver a imprimir cartas.</span></div></li>
+          <li><div><b>Carta por categorías.</b> <span>Entrantes, tostas, raciones, postres… con ingredientes y alérgenos.</span></div></li>
+          <li><div><b>QR listo para imprimir.</b> <span>Te lo entrego en alta calidad para mesas, barra y escaparate.</span></div></li>
+          <li><div><b>Sin apps ni descargas.</b> <span>Se abre con la cámara de cualquier móvil.</span></div></li>
+        </ul>
+        <a class="cta dark" href="boina-y-copa/#carta">Ver carta de ejemplo <span aria-hidden="true">→</span></a>
+      </div>
+      <div>
+        <div class="stage">
+          <div class="tent">
+            <div class="tent-name">BOINA Y COPA</div>
+            <div class="tent-sub">BAR RESTAURANT</div>
+            <div class="tent-rule"></div>
+            <p class="tent-cta">Escanea y descubre nuestra carta</p>
+            <a class="qrbox" href="boina-y-copa/#carta" aria-label="Abrir la carta de ejemplo"><svg class="qr" viewBox="0 0 33 33" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Código QR que abre la carta de ejemplo de Boina y Copa" shape-rendering="crispEdges"><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM12 0h1v1h-1zM16 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM9 1h1v1h-1zM11 1h1v1h-1zM12 1h1v1h-1zM15 1h1v1h-1zM17 1h1v1h-1zM18 1h1v1h-1zM20 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM9 2h1v1h-1zM12 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM16 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM9 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM12 3h1v1h-1zM15 3h1v1h-1zM17 3h1v1h-1zM19 3h1v1h-1zM20 3h1v1h-1zM22 3h1v1h-1zM23 3h1v1h-1zM24 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM11 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM23 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM11 5h1v1h-1zM17 5h1v1h-1zM18 5h1v1h-1zM20 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM8 7h1v1h-1zM9 7h1v1h-1zM10 7h1v1h-1zM12 7h1v1h-1zM16 7h1v1h-1zM21 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM9 8h1v1h-1zM10 8h1v1h-1zM13 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM17 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM26 8h1v1h-1zM27 8h1v1h-1zM28 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM2 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM9 9h1v1h-1zM11 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM16 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM32 9h1v1h-1zM0 10h1v1h-1zM3 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM9 10h1v1h-1zM11 10h1v1h-1zM13 10h1v1h-1zM14 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM31 10h1v1h-1zM2 11h1v1h-1zM3 11h1v1h-1zM7 11h1v1h-1zM8 11h1v1h-1zM11 11h1v1h-1zM12 11h1v1h-1zM13 11h1v1h-1zM15 11h1v1h-1zM18 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM25 11h1v1h-1zM28 11h1v1h-1zM29 11h1v1h-1zM30 11h1v1h-1zM32 11h1v1h-1zM0 12h1v1h-1zM1 12h1v1h-1zM3 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM22 12h1v1h-1zM23 12h1v1h-1zM24 12h1v1h-1zM25 12h1v1h-1zM27 12h1v1h-1zM28 12h1v1h-1zM29 12h1v1h-1zM31 12h1v1h-1zM32 12h1v1h-1zM10 13h1v1h-1zM11 13h1v1h-1zM15 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM26 13h1v1h-1zM31 13h1v1h-1zM32 13h1v1h-1zM0 14h1v1h-1zM1 14h1v1h-1zM2 14h1v1h-1zM3 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM20 14h1v1h-1zM22 14h1v1h-1zM25 14h1v1h-1zM26 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM30 14h1v1h-1zM31 14h1v1h-1zM4 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM11 15h1v1h-1zM12 15h1v1h-1zM13 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM26 15h1v1h-1zM28 15h1v1h-1zM29 15h1v1h-1zM30 15h1v1h-1zM0 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM9 16h1v1h-1zM13 16h1v1h-1zM15 16h1v1h-1zM17 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM32 16h1v1h-1zM3 17h1v1h-1zM7 17h1v1h-1zM11 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM16 17h1v1h-1zM19 17h1v1h-1zM20 17h1v1h-1zM21 17h1v1h-1zM23 17h1v1h-1zM26 17h1v1h-1zM27 17h1v1h-1zM29 17h1v1h-1zM30 17h1v1h-1zM32 17h1v1h-1zM2 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM13 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM21 18h1v1h-1zM25 18h1v1h-1zM26 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM30 18h1v1h-1zM1 19h1v1h-1zM2 19h1v1h-1zM5 19h1v1h-1zM8 19h1v1h-1zM11 19h1v1h-1zM13 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM19 19h1v1h-1zM21 19h1v1h-1zM24 19h1v1h-1zM26 19h1v1h-1zM27 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM30 19h1v1h-1zM32 19h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM7 20h1v1h-1zM12 20h1v1h-1zM15 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM22 20h1v1h-1zM25 20h1v1h-1zM27 20h1v1h-1zM28 20h1v1h-1zM29 20h1v1h-1zM0 21h1v1h-1zM1 21h1v1h-1zM4 21h1v1h-1zM5 21h1v1h-1zM7 21h1v1h-1zM13 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM21 21h1v1h-1zM23 21h1v1h-1zM26 21h1v1h-1zM29 21h1v1h-1zM32 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM6 22h1v1h-1zM7 22h1v1h-1zM8 22h1v1h-1zM9 22h1v1h-1zM10 22h1v1h-1zM11 22h1v1h-1zM13 22h1v1h-1zM14 22h1v1h-1zM18 22h1v1h-1zM20 22h1v1h-1zM25 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM31 22h1v1h-1zM0 23h1v1h-1zM3 23h1v1h-1zM4 23h1v1h-1zM7 23h1v1h-1zM9 23h1v1h-1zM10 23h1v1h-1zM11 23h1v1h-1zM12 23h1v1h-1zM13 23h1v1h-1zM14 23h1v1h-1zM16 23h1v1h-1zM19 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM25 23h1v1h-1zM26 23h1v1h-1zM27 23h1v1h-1zM30 23h1v1h-1zM31 23h1v1h-1zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM9 24h1v1h-1zM12 24h1v1h-1zM14 24h1v1h-1zM17 24h1v1h-1zM20 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM31 24h1v1h-1zM8 25h1v1h-1zM9 25h1v1h-1zM10 25h1v1h-1zM12 25h1v1h-1zM14 25h1v1h-1zM16 25h1v1h-1zM17 25h1v1h-1zM18 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM21 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM30 25h1v1h-1zM32 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM9 26h1v1h-1zM11 26h1v1h-1zM12 26h1v1h-1zM15 26h1v1h-1zM17 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM30 26h1v1h-1zM31 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM9 27h1v1h-1zM12 27h1v1h-1zM13 27h1v1h-1zM16 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM31 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM10 28h1v1h-1zM16 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM31 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM12 29h1v1h-1zM13 29h1v1h-1zM14 29h1v1h-1zM15 29h1v1h-1zM17 29h1v1h-1zM18 29h1v1h-1zM19 29h1v1h-1zM25 29h1v1h-1zM28 29h1v1h-1zM29 29h1v1h-1zM31 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM8 30h1v1h-1zM9 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM12 30h1v1h-1zM13 30h1v1h-1zM15 30h1v1h-1zM16 30h1v1h-1zM17 30h1v1h-1zM18 30h1v1h-1zM20 30h1v1h-1zM21 30h1v1h-1zM24 30h1v1h-1zM25 30h1v1h-1zM26 30h1v1h-1zM27 30h1v1h-1zM29 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM11 31h1v1h-1zM15 31h1v1h-1zM19 31h1v1h-1zM20 31h1v1h-1zM21 31h1v1h-1zM22 31h1v1h-1zM28 31h1v1h-1zM29 31h1v1h-1zM30 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM11 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM15 32h1v1h-1zM17 32h1v1h-1zM18 32h1v1h-1zM19 32h1v1h-1zM22 32h1v1h-1zM24 32h1v1h-1zM25 32h1v1h-1zM27 32h1v1h-1zM31 32h1v1h-1z" fill="currentColor"/></svg></a>
+            <div class="tent-foot">Mesa 7</div>
+          </div>
+        </div>
+        <p class="scan-hint">Pruébalo: escanéalo con la cámara de tu móvil.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="como-trabajo">
+    <div class="wrap">
+      <h2>Cómo trabajo</h2>
+      <div class="facts">
+        <div class="fact"><b>1–2 días</b><span>para ver una demo de tu negocio, gratis</span></div>
+        <div class="fact"><b>3–4 días</b><span>para tener la web completa</span></div>
+        <div class="fact"><b>100&nbsp;% tuya</b><span>dominio y hosting a tu nombre</span></div>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Te enseño una demo</h3><p>Preparo gratis una versión de la web con tu negocio para que la veas en tu móvil antes de decidir nada.</p></div>
+        <div class="step"><h3>La ajustamos juntos</h3><p>Cambiamos textos, fotos, colores y secciones hasta que sea como quieres. Web completa en 3–4 días.</p></div>
+        <div class="step"><h3>La publicas a tu nombre</h3><p>Te guío paso a paso para contratar dominio y hosting a tu nombre, así la web siempre es tuya.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="contacto">
+    <div class="contact">
+      <h2>¿Hacemos la <em>de tu negocio</em>?</h2>
+      <p>Escríbeme por donde hayas visto este enlace, cuéntame qué negocio tienes y te preparo una demo gratis, sin compromiso.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Rodrigo · Fuenlabrada, Madrid</span>
+    <span>Los negocios de las demos son ficticios.</span>
+  </div>
+</footer>
+
+</body>
+</html>

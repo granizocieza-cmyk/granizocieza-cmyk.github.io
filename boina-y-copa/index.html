@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bar Restaurant Boina y Copa · Madrid</title>
+  <meta name="description" content="Bar restaurante en el centro de Madrid. Tostas, bocadillos, gambas, torreznos caseros y terraza. Carta, horario y teléfono: 600 000 000.">
+  <meta name="theme-color" content="#11100e">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2311100e'/%3E%3Ctext x='32' y='47' font-family='Impact,sans-serif' font-size='44' text-anchor='middle' fill='%23b88a4b'%3EB%3C/text%3E%3C/svg%3E">
+
+  <meta property="og:type" content="restaurant.restaurant">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Bar Restaurant Boina y Copa · Madrid">
+  <meta property="og:description" content="Tostas, bocadillos, gambas y torreznos caseros en el centro de la ciudad. Con terraza.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=3">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["BarOrPub", "Restaurant"],
+    "name": "Bar Restaurant Boina y Copa",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle Mayor, 12",
+      "postalCode": "28013",
+      "addressLocality": "Madrid",
+      "addressRegion": "Madrid",
+      "addressCountry": "ES"
+    },
+    "telephone": "+34600000000",
+    "priceRange": "10–20 €",
+    "amenityFeature": { "@type": "LocationFeatureSpecification", "name": "Terraza", "value": true },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "09:00", "closes": "23:59" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "01:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "01:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "23:59" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav" aria-label="Principal">
+      <a class="nav__logo" href="#inicio" translate="no">Boina y Copa</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav__bars" aria-hidden="true"></span><span>Menú</span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#horario">Horario</a></li>
+        <li><a href="#especiales">Lo más pedido</a></li>
+        <li><a href="#carta">Carta</a></li>
+        <li><a href="#donde">Cómo llegar</a></li>
+      </ul>
+      <button class="nav__cta" type="button" data-open-reservar>Reserva tu mesa</button>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio" aria-label="Portada">
+    <img class="hero__bg" src="img/fotos/portada-tapa.webp" alt="" width="1672" height="941" fetchpriority="high">
+
+    <div class="hero__body">
+      <div class="crest" aria-hidden="true">
+        <span class="crest__rule"></span>
+        <img class="cap" src="img/boina.webp" alt="" width="363" height="235">
+        <span class="crest__rule"></span>
+      </div>
+      <h1 class="hero__title" translate="no">Boina y Copa</h1>
+      <p class="hero__kicker"><span>Bar Restaurant</span></p>
+      <p class="hero__lead">Tapas, buena comida y el mejor ambiente en el corazón de la ciudad.</p>
+      <a class="btn btn--primary" href="#carta">Descubre nuestra carta <span aria-hidden="true">→</span></a>
+      <p class="open" role="status" data-open>
+        <span class="open__dot" aria-hidden="true"></span>
+        <span data-open-text>Abrimos a las 9 de lunes a viernes.</span>
+      </p>
+    </div>
+
+    <div class="hero__orn" aria-hidden="true"><i></i><b></b><i></i></div>
+  </section>
+
+  <main id="contenido">
+    <!-- HORARIO -->
+    <section class="horario" id="horario" aria-labelledby="horario-h">
+      <div class="wrap">
+        <h2 id="horario-h" class="sec-title">Horario</h2>
+        <p class="hours__status" data-open-line></p>
+        <table class="hours">
+          <caption class="sr">Horario semanal</caption>
+          <tbody>
+            <tr data-day="1"><th scope="row">Lunes</th><td>9:00 – 24:00</td></tr>
+            <tr data-day="2"><th scope="row">Martes</th><td>9:00 – 24:00</td></tr>
+            <tr data-day="3"><th scope="row">Miércoles</th><td>9:00 – 24:00</td></tr>
+            <tr data-day="4"><th scope="row">Jueves</th><td>9:00 – 24:00</td></tr>
+            <tr data-day="5"><th scope="row">Viernes</th><td>9:00 – 1:00</td></tr>
+            <tr data-day="6"><th scope="row">Sábado</th><td>10:00 – 1:00</td></tr>
+            <tr data-day="0"><th scope="row">Domingo</th><td>10:00 – 24:00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- LO MÁS PEDIDO -->
+    <section class="top" id="especiales" aria-labelledby="top-h">
+      <div class="wrap">
+        <h2 id="top-h" class="sec-title">Lo más pedido</h2>
+        <p class="lead">Lo que repiten los clientes: gambas, marisco, tapas y torreznos caseros.</p>
+
+        <ul class="picks">
+          <li class="pick">
+            <div class="photo is-empty" data-foto="gambas">
+              <div class="ph" role="img" aria-label="Plato: gambas"><svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="9"/><path d="M6 10v9a3 3 0 0 0 3 3v16M9 10v8M12 10v9a3 3 0 0 1-3 3M40 10c-3 2-4 6-4 10h4v18"/></svg></div>
+            </div>
+            <p><strong>Gambas</strong></p>
+          </li>
+          <li class="pick">
+            <div class="photo is-empty" data-foto="torreznos">
+              <div class="ph" role="img" aria-label="Plato: torreznos"><svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="9"/><path d="M6 10v9a3 3 0 0 0 3 3v16M9 10v8M12 10v9a3 3 0 0 1-3 3M40 10c-3 2-4 6-4 10h4v18"/></svg></div>
+            </div>
+            <p><strong>Torreznos caseros</strong></p>
+          </li>
+          <li class="pick">
+            <div class="photo is-empty" data-foto="tortilla-boina">
+              <div class="ph" role="img" aria-label="Plato: tortilla Boina"><svg viewBox="0 0 48 48" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="9"/><path d="M6 10v9a3 3 0 0 0 3 3v16M9 10v8M12 10v9a3 3 0 0 1-3 3M40 10c-3 2-4 6-4 10h4v18"/></svg></div>
+            </div>
+            <p><strong>Tortilla Boina</strong><span>Patata, York y queso.</span></p>
+          </li>
+        </ul>
+
+        <aside class="feria deco" aria-labelledby="feria-h">
+          <p class="feria__tag">Especialidad de la casa</p>
+          <h3 id="feria-h">La tapa «Boina»</h3>
+          <p>Nuestra tortilla de patatas rellena de York y queso. Se llama como el bar, y por algo será.</p>
+        </aside>
+
+        <p class="casera"><strong>Cocina casera:</strong> paella, ensaladilla y salmorejo. Los bizcochos y la bollería son propios.</p>
+
+        <div class="especial-wrap">
+          <h3 class="sub" id="especial-h">Especial de la casa</h3>
+          <div id="especial-casa" class="especiales"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARTA -->
+    <section class="carta" id="carta" aria-labelledby="carta-h">
+      <div class="wrap">
+        <h2 id="carta-h" class="sec-title">Nuestra carta</h2>
+        <p class="note">Toca un plato para ver sus ingredientes.</p>
+      </div>
+      <div class="chips"><div class="chips__list" id="chips" role="tablist" aria-label="Categorías de la carta"></div></div>
+      <div class="wrap menu" id="menu">
+        <noscript><p class="note">Para ver la carta hace falta JavaScript. Llámanos al <a href="tel:+34600000000">600&nbsp;000&nbsp;000</a>.</p></noscript>
+      </div>
+    </section>
+
+    <!-- TERRAZA -->
+    <section class="terraza" id="terraza" aria-labelledby="terraza-h">
+      <div class="wrap">
+        <h2 id="terraza-h" class="sec-title">Terraza</h2>
+        <div class="photo photo--wide" data-foto="terraza">
+          <img src="img/fotos/terraza.webp" width="1215" height="283" alt="Terraza del bar" loading="lazy" onerror="this.parentNode.classList.add('is-empty')">
+          <div class="ph ph--wide" role="img" aria-label="Terraza"><span>Terraza</span></div>
+        </div>
+        <p class="terraza__txt"><strong>Tenemos terraza.</strong></p>
+      </div>
+    </section>
+
+    <!-- DÓNDE ENCONTRARNOS -->
+    <section class="donde" id="donde" aria-labelledby="donde-h">
+      <div class="wrap">
+        <h2 id="donde-h" class="sec-title">Dónde encontrarnos</h2>
+        <address>
+          Calle Mayor, 12<br>
+          28013 Madrid
+        </address>
+        <p class="phone"><a href="tel:+34600000000">600&nbsp;000&nbsp;000</a></p>
+        <a class="btn btn--primary" href="https://www.google.com/maps/search/?api=1&amp;query=Calle+Mayor+12+Madrid" target="_blank" rel="noopener">Abrir en Google Maps</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p><strong translate="no">Bar Restaurant Boina y Copa</strong> · Calle Mayor, 12 · Madrid · <a href="tel:+34600000000">600&nbsp;000&nbsp;000</a></p>
+      <p class="foot__small">Web de demostración: negocio, dirección y teléfono ficticios.</p>
+    </div>
+  </footer>
+
+  <!-- Barra fija inferior (móvil) -->
+  <div class="dock">
+    <button class="btn btn--primary" type="button" data-open-reservar>Reservar</button>
+    <a class="btn" href="tel:+34600000000">Llamar</a>
+  </div>
+
+  <!-- Panel de reserva: dos vías reales, sin formulario falso -->
+  <dialog class="reservar" id="reservar" aria-labelledby="reservar-h">
+    <form method="dialog" class="reservar__box">
+      <h2 id="reservar-h">Reservar mesa</h2>
+      <p>Reservamos por teléfono o por WhatsApp.</p>
+      <a class="btn btn--primary" href="tel:+34600000000">Llamar · 600&nbsp;000&nbsp;000</a>
+      <a class="btn" id="reservar-wa" href="https://wa.me/34600000000" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+      <p class="reservar__hint">El mensaje sale escrito; solo falta rellenar personas, día y hora.</p>
+      <button class="btn btn--ghost" value="cancel">Cerrar</button>
+    </form>
+  </dialog>
+
+  <script src="js/carta.js?v=3"></script>
+  <script src="js/main.js?v=3"></script>
+<style>@media (max-width:860px){#pf-back{bottom:92px!important;left:12px!important;padding:9px 13px!important;font-size:12px!important}}</style><a href="../" id="pf-back" style="position:fixed;left:16px;bottom:16px;z-index:2147483000;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:rgba(24,24,27,.92);color:#f4f1ea;font:600 13px/1 system-ui,-apple-system,'Segoe UI',sans-serif;text-decoration:none;box-shadow:0 8px 24px -8px rgba(0,0,0,.45);backdrop-filter:blur(6px)">&larr; Volver al portfolio</a>
+</body>
+</html>
